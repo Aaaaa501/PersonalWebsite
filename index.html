@@ -1,11 +1,238 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexander Wang</title>
-</head>
-<body>
-    <h1>Hello</h1>
-</body>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alexander Wang</title>
+        <style>
+            body {
+                height: 100vh;
+                width: 100vw;
+                background-color: black;
+                margin: 0rem;
+                overflow: hidden;
+            }
+
+            a,
+            a:visited,
+            a:focus,
+            a:active {
+                color:white;
+                text-decoration: none;
+            }
+
+            #nav {
+                position: fixed;
+                left: 0; 
+                width: 100%;
+                pointer-events: none;
+                z-index: 9999;
+                top: 37px;
+                font-size: 16px;
+                line-height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #nav div {
+                margin-right: 22px;
+                margin-left: 22px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .nav-a.on,
+            .nav-a:hover {
+                opacity: 1;
+            }
+
+            .nav-a,
+            .nav-b {
+                will-change: transform;
+                transform: translate3d(0, 110%, 0);
+                pointer-events: all;
+                transition: opacity 300ms cubic-bezier(.25, .46, .45, .94);
+                font-size: 3vh;
+                line-height: 4vh;
+                font-family: Verdana;
+            }
+
+            .nav-a {
+                opacity: .3;
+            }
+
+            #scroller > .item-container > a > .item {
+                object-fit: cover;
+                object-position: 100% 50%;
+                pointer-events: all;
+                transition: width 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                            height 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                            transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            }
+
+            #scroller > .item-container > a > .item:hover {
+                transform: translate(-1.5vmin, -3.5vmin);
+                width: 30vmin;
+                height: 45vmin;
+            }
+
+            #scroller > .item-container {
+                object-position: center;
+            }
+
+            #scroller > .item-container > a > .item,
+            #scroller > .item-container {
+                width: 27vmin;
+                height: 38vmin;
+            }
+
+            #scroller {
+                display: flex;
+                gap: 10px 6vmin;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(0, -50%);
+            }
+
+            .item-text {
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
+                font-size: 2.5vmin;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="nav">
+            <div>
+                <a href="/">
+                    <p class="nav-b" style="pointer-events: all; transform: translate3d(0%, 0%, 0px);">Timeline</p>
+                </a>
+            </div>
+            <div>
+                <a href="/about.html">
+                    <p class="nav-a" style="transform: translate3d(0%, 0%, 0px); pointer-events: all;">About</p>
+                </a>
+            </div>
+        </nav>
+        <div id="scroller" data-mouse-down-at="0" data-prev-percentage="0">
+            <div class="item-container">
+                <a href="">
+                    <img class="item" src="Assets/Test.png" draggable="false" />
+                </a>
+                <p class="item-text">
+                    Placeholder
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://github.com/stevenson-space/shs">
+                    <img class="item" src="Assets/StevensonSpace.png" draggable="false" />
+                </a>
+                <p class="item-text">
+                    Aug 2022 - Present: Development of School Website
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://issdc.org/">
+                    <img class="item" src="Assets/ISSDC.png" draggable="false" />
+                </a>
+                <p class="item-text">
+                    July 2022: International Space Settlement Design Competition - 2nd Place
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://summer.uchicago.edu/course/pathways-data-science">
+                    <img class="item" src="Assets/UChicago_Summer.svg" draggable="false" />
+                </a>
+                <p class="item-text">
+                    July 2022: UChicago Immersion Summer Camp Pathways in Data Science - 97.5/100
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://www.abbvie.com/">
+                    <img class="item" src="Assets/Abbvie.jpg" draggable="false" />
+                </a>
+                <p class="item-text">
+                    June 2022: Summer Worker at Abbvie
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://www.nhs.us/">
+                    <img class="item" src="Assets/NHS.jpg" draggable="false" />
+                </a>
+                <p class="item-text">
+                    Apr 2022 - Present: National Honor Society
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://sites.google.com/ijas.org/ijas/about?pli=1">
+                    <img class="item" src="Assets/IJAS.png" draggable="false" />
+                </a>
+                <p class="item-text">
+                    Apr 2022: Illinois Junior Academy of Sciences - 1st Place State in Mathematics (<a href="/Assets/REACH_Paper.pdf" style="text-decoration-line: underline">Paper</a>)
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://bpa.org/">
+                    <img class="item" src="Assets/BPA.jpg" draggable="false" />
+                </a>
+                <p class="item-text">
+                    Feb 2022: Business Professionals Of America - 2nd Place Nationals Fundamental Accounting
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://www.benefits.gov/benefit/1543">
+                    <img class="item" src="Assets/VITA+TCE.png" draggable="false" />
+                </a>
+                <p class="item-text">
+                    Jan 2022 - July 2022: Volunteer Income Tax Assistance / Tax Counseling for the Elderly
+                </p>
+            </div>
+            <div class="item-container">
+                <a href="https://profile.edx.org/u/2004chouchou" class="item-link">
+                    <img class="item" src="Assets/berkleyXCertificate.png" draggable="false" />
+                </a>
+                <p class="item-text">
+                    Aug 2021: Foundation of Data Sciences from UC Berkeley
+                </p>
+            </div>
+        </div>
+        <script>
+            const track = document.getElementById("scroller");
+
+            window.onmousedown = e => {
+                track.dataset.mouseDownAt = e.clientX;
+            }
+
+            window.onmouseup = () => {
+                track.dataset.mouseDownAt = "0";
+                track.dataset.prevPercentage = track.dataset.percentage;
+            }
+
+            window.onmousemove = e => {
+                if(track.dataset.mouseDownAt === "0") return;
+                const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
+                      maxDelta = window.innerWidth / 2;
+
+                const percentage = (mouseDelta / maxDelta) * -100,
+                      nextPercent = Math.min(Math.max(parseFloat(track.dataset.prevPercentage) + percentage, -100), 0);
+
+                track.dataset.percentage = nextPercent;
+
+                //track.style.transform = 'translate('+nextPercent.toString()+'%, -50%)';
+                track.animate({
+                    transform: 'translate('+nextPercent.toString()+'%, -50%)'
+                }, { duration: 1200, fill: "forwards" });
+
+                //FIGURE OUT WHY IT ISNT WORKING SINCE LINKS WERE ADDED
+                for(const item of track.getElementsByClassName("item")) {
+                    //item.style.objectPosition = (nextPercent+100).toString()+'% 50%';
+                    item.animate({
+                        objectPosition: (nextPercent+100).toString()+'% 50%'
+                    }, { duration: 1200, fill: "forwards" });
+                }
+            }
+        </script>
+        <noscript>Please enable JavaScript to view this website.</noscript>
+    </body>
 </html>

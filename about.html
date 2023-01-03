@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Alexander Wang</title>
+        <style>
+            body {
+                height: 100vh;
+                width: 100vw;
+                background-color: black;
+                margin: 0rem;
+                overflow: hidden;
+            }
+
+            a,
+            a:visited,
+            a:focus,
+            a:active {
+                color:white;
+                text-decoration: none;
+            }
+
+            p {
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            h1 {
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+            
+            #nav {
+                position: fixed;
+                left: 0; 
+                width: 100%;
+                pointer-events: none;
+                z-index: 9999;
+                top: 37px;
+                font-size: 16px;
+                line-height: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #nav div {
+                margin-right: 22px;
+                margin-left: 22px;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+
+            .nav-a.on,
+            .nav-a:hover {
+                opacity: 1;
+            }
+
+            .nav-a,
+            .nav-b {
+                will-change: transform;
+                transform: translate3d(0, 110%, 0);
+                pointer-events: all;
+                transition: opacity 300ms cubic-bezier(.25, .46, .45, .94);
+                font-size: 3vh;
+                line-height: 4vh;
+                font-family: Verdana;
+            }
+
+            .nav-a {
+                opacity: .3;
+            }
+
+            #about-container {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                min-height: 100vh;
+                font-size: 2.5vh;
+            }
+
+            .description-part {
+                text-align:center;
+            }
+
+            .socials {
+                line-height: 2vh;
+            }
+
+            .logo {
+                will-change: transform;
+                transform: translate3d(0, 110%, 0);
+                pointer-events: all;
+                transition: opacity 300ms cubic-bezier(.25, .46, .45, .94);
+                opacity: .5;
+                color: lightgray;
+                display: inline;
+            }
+
+            .logo:hover {
+                opacity: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="nav">
+            <div>
+                <a href="/">
+                    <p class="nav-a" style="pointer-events: all; transform: translate3d(0%, 0%, 0px);">Timeline</p>
+                </a>
+            </div>
+            <div>
+                <a href="/about.html">
+                    <p class="nav-b" style="transform: translate3d(0%, 0%, 0px); pointer-events: all;">About</p>
+                </a>
+            </div>
+        </nav>
+        <div id="about-container">
+            <p class="description-part">
+                I am a high school student at Stevenson<br>
+                High School. I am interested in finance<br>
+                I am interested in finance, economics, data<br>
+                science, and computer science.
+            </p>
+            <div class="description-part socials">
+                <p style="transform: translate3d(0, 40%, 0);">Socials:</p>
+                <br>
+                <div class="logo-container">
+                    <a href="https://github.com/Aaaaa501">
+                        <p class="description-part logo">Github</p>
+                    </a>
+                </div>
+                <br>
+                <div class="logo-container">
+                    <a href="mailto:alwang24@students.d125.org">
+                        <p class="description-part logo">Email</p>
+                    </a>
+                </div>
+                <br>
+                <div class="logo-container">
+                    <a href="https://www.facebook.com/profile.php?id=100055179781724">
+                        <p class="description-part logo">Facebook</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <noscript>Please enable JavaScript to view this website.</noscript>
+    </body>
+</html>
